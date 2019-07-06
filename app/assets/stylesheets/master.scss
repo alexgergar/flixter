@@ -1,9 +1,11 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Source+Sans+Pro&display=swap');
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Source+Sans+Pro:200,400o&display=swap');
 
 .navbar {
   font-family: 'DM Serif Display', serif;
-  // font-family: 'Source Sans Pro', sans-serif;
+  background: #F2F2F2;
+  // 
   font-size: 24px;
   letter-spacing: 0.5px;
   box-shadow: 0px 1px 3px #2a2a2a;
@@ -12,15 +14,42 @@
 .nav-item {
   font-size: 18px;
   font-family: 'Source Sans Pro', sans-serif;
-  letter-spacing: 0px;
-  font-weight: 300px;
+}
+
+.hero {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image_url('hero1.jpg') no-repeat center center fixed;;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+  color: #F2F2F2;
+  text-shadow: 2px 2px 4px #000000;
+  display: flex;
+  align-items: center;
+}
+
+.btn-light {
+  background-color: #8C3503;
+  color: #F2F2F2;
+  border-color: #8C3503;
+}
+
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body h4 {
+  letter-spacing: 0.5px;
+  font-weight: 200;
 }
 
 
 
 /* Color Theme Swatches in Hex */
-.Fashion-1-hex { color: #8C8B88; }
-.Fashion-2-hex { color: #A66329; }
-.Fashion-3-hex { color: #8C3503; }
-.Fashion-4-hex { color: #F2F2F2; }
-.Fashion-5-hex { color: #0D0D0D; }
+.Fashion-1-hex { color: #8C8B88; } /*grey*/
+.Fashion-2-hex { color: #A66329; } /*orange*/
+.Fashion-3-hex { color: #8C3503; } /*red orange*/
+.Fashion-4-hex { color: #F2F2F2; } /*white*/
+.Fashion-5-hex { color: #0D0D0D; } /*black*/
