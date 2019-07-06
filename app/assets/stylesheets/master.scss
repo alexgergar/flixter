@@ -35,6 +35,11 @@
   border-color: #8C3503;
 }
 
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -44,8 +49,6 @@ body h4 {
   letter-spacing: 0.5px;
   font-weight: 200;
 }
-
-
 
 /* Color Theme Swatches in Hex */
 .Fashion-1-hex { color: #8C8B88; } /*grey*/
