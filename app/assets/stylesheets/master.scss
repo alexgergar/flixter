@@ -1,1 +1,26 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Source+Sans+Pro&display=swap');
+
+.navbar {
+  font-family: 'DM Serif Display', serif;
+  // font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.nav-item {
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0px;
+  font-weight: 300px;
+}
+
+
+
+/* Color Theme Swatches in Hex */
+.Fashion-1-hex { color: #8C8B88; }
+.Fashion-2-hex { color: #A66329; }
+.Fashion-3-hex { color: #8C3503; }
+.Fashion-4-hex { color: #F2F2F2; }
+.Fashion-5-hex { color: #0D0D0D; }
