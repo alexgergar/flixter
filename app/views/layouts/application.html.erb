@@ -10,47 +10,69 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-faded ">
-      <a class="navbar-flixter px-3" href="#">Flixter</a>
-        
+    <div id="flex-content-container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-faded ">
+        <a class="navbar-flixter px-3" href="#">Flixter</a>
+          
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-      <div class="collapse navbar-collapse" id="navbartoggler">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link py-auto" href="#">COURSES</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav my-2 my-lg-0">
-          <% if user_signed_in? %>
-          <li class="nav-item ml-2">
-            <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "nav-link"%>
-          </li>
-          <% else %>
-          <li class="nav-item ml-2">
-            <%= link_to "SIGN IN", new_user_session_path, class: "nav-link"%>
-          </li> 
-          <li class="nav-item">
-            <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link"%>
-          </li> 
-          <% end %>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+        <div class="collapse navbar-collapse" id="navbartoggler">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link py-auto" href="#">COURSES</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <% if user_signed_in? %>
+            <li class="nav-item ml-2">
+              <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "nav-link"%>
+            </li>
+            <% else %>
+            <li class="nav-item ml-2">
+              <%= link_to "SIGN IN", new_user_session_path, class: "nav-link"%>
+            </li> 
+            <li class="nav-item">
+              <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link"%>
+            </li> 
+            <% end %>  
+          </ul>
+        </div>
+      </nav>
+
+
+      <% if notice.present? %>
+        <p class="alert alert-info alert-dismissible fade show" role="alert">
+          <%= notice %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </p>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <b>Footer Here</b>
+          <br/>
+          <%= link_to 'Link', '#' %>
       </div>
-    </nav>
-
-
-  <% if notice.present? %>
-    <p class="alert alert-info"><%= notice %></p>
-  <% end %>
-  <% if alert.present? %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-    <%= yield %>
+    </>
   </body>
 </html>
