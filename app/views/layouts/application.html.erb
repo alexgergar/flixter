@@ -21,15 +21,36 @@
       <div class="collapse navbar-collapse" id="navbartoggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link py-auto" href="#">Courses</a>
+            <a class="nav-link py-auto" href="#">COURSES</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search">
           <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <% if user_signed_in? %>
+          <li class="nav-item ml-2">
+            <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "nav-link"%>
+          </li>
+          <% else %>
+          <li class="nav-item ml-2">
+            <%= link_to "SIGN IN", new_user_session_path, class: "nav-link"%>
+          </li> 
+          <li class="nav-item">
+            <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link"%>
+          </li> 
+          <% end %>       
       </div>
     </nav>
+
+
+  <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
     <%= yield %>
   </body>
 </html>
