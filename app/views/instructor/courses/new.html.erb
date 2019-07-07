@@ -1,0 +1,14 @@
+<br />
+<div class="box-style col-10 offset-1 text-center">
+    <h1>Add a new course</h1>
+    <%= simple_form_for @course, url: instructor_courses_path do |f| %>
+        <div class="col text-left">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :cost %>
+        <br />
+        </div>
+        <%= f.submit "Create", class: "btn btn-outline-secondary" %>
+    <% end %>
+    <br />
+</div>
