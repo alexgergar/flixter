@@ -39,6 +39,10 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.fa {
+  text-shadow: none;
+}
+
 .btn-light {
   background-color: #8C3503;
   color: #F2F2F2;
@@ -61,6 +65,15 @@ body h4 {
 
 .btn:hover {
   color: #F2F2F2;
+}
+
+.clr {
+  clear: both;
+}
+
+.ctolink a {
+  color: #0D0D0D;
+  text-decoration: none;
 }
 
 /* Color Theme Swatches in Hex */

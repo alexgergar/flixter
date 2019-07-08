@@ -3,9 +3,13 @@
 		<h1>Skills to move you forward</h1>
 		<h4>Anytime. Anyplace.</h4>
 		<form class="d-flex form-inline">
-      <input class="form-control col mr-2" type="text" placeholder="What would you like to learn?">
-      <button class="btn btn-light col-lg-1" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
+			<div class="input-group col-12 pl-0 mt-2">
+      			<div class="input-group-prepend">
+        			<span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+      			</div>
+      			<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+    		</div>
+    	</form>
 	</div>
 </div>
 
@@ -13,7 +17,6 @@
 <div class="row feature text-center">
 	<div class="col-12 col-sm border-right">
 		<h3>Learn from the Best</h3>
-    	<p>Build your Skill</p>
 	</div>
 
 	<div class="col-12 col-sm border-right">
@@ -24,5 +27,12 @@
 	<div class="col-12 col-sm">
 		<h3>Lifetime Access</h3>
     	<p>Learn on your schedule!</p>
+	</div>
+</div>
+<br class="clr" />
+
+<div class="row text-center">
+	<div class="ctolink col">
+		<h1><%= link_to "Browse the Courses", new_user_session_path %></h1>
 	</div>
 </div>
