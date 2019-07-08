@@ -1,0 +1,11 @@
+<br />
+<div class="box-style col-8 offset-2">
+    <h1 class="text-center">Add a new section</h1>
+    <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description, placeholder: 'One sentence description what you will teach in this section. Keep it short and sweet!' %>
+        <div class="text-right mb-1">
+            <%= f.submit "Add a section", class: "btn btn-outline-secondary btn-large" %>
+        </div>
+    <% end %>
+</div>
