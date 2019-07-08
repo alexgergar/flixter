@@ -76,6 +76,15 @@ body h4 {
   text-decoration: none;
 }
 
+.course-title a {
+  color: #0D0D0D;
+  text-decoration: none;
+}
+
+.course-title a:hover { 
+  text-shadow: 1px 2px 2px #c9c9c9;
+}
+
 /* Color Theme Swatches in Hex */
 .Fashion-1-hex { color: #8C8B88; } /*grey*/
 .Fashion-2-hex { color: #A66329; } /*orange*/

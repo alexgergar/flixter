@@ -1,0 +1,20 @@
+<br />
+
+<div class="box-style col-10 offset-1 text-center">
+    <h1><%= @course.title %></h1>
+			<br />
+		<div class="row">
+			<div class="col-sm-3 col-12 text-center border-right">
+				<h3><%= number_to_currency @course.cost %></h3>
+			
+				<% if current_user && current_user == @course.user %>
+					<br />
+					<%= link_to "Administer", instructor_course_path(@course), class: "btn btn-danger btn-large"%>
+				<% end %>
+			</div>
+			
+			<div class="col-sm-9 col-12 my-auto">
+					<%= @course.description %>
+			</div>
+		</div>
+</div>
