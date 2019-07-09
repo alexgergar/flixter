@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :courses, only: [:index, :show]
   namespace :instructor do
+    resources :sections, only: [] do              # This section is so course id isn't shown so no one can hack the url to build lesson in a wrong course - no new urls connected to it
+      resources :lessons, only: [:new, :create]   # Then the lesson be nested under it and get section id
+    end
     resources :courses, only: [:new, :create, :show] do
-      resources :sections, only: [:new, :create]
+      resources :sections, only: [:new, :create]  #this allows us to get the seciton id and create the actions we need
     end
   end
 end

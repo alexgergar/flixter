@@ -13,10 +13,23 @@
       <% @course.sections.each do |section| %>
           <li>
               <h4><%= section.title %></h4>
+              <%= link_to 'Add a New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-dark'%>
+              <br class="clr" />
           </li>
           <li>
               <p><%= section.description%></p>
           </li>
-      <% end %>
-    </ul>
+          <ul>
+             <% section.lessons.each do |lesson| %>
+                <li>
+              <b><%= lesson.title %></b>
+              -
+              <%= lesson.subtitle %>
+            </li>
+          <% end %>
+        </ul>
+        <br class="clr" />
+      </li>
+    <% end %>
+  </ul>
 </div>
