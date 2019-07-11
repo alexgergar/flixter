@@ -1,7 +1,7 @@
 <br />
 <div class="box-style col-8 offset-2">
     <h1 class="text-center">Add a new lesson</h1>
-     <%= simple_form_for @lesson, url: instructor_section_lessons_path(@section) do |f| %>
+     <%= simple_form_for @lesson, url: instructor_section_lessons_path(current_section) do |f| %>
         <%= f.input :title %>
         <%= f.input :subtitle, placeholder: 'One sentence description of your lesson.' %>
         <div class="text-right mb-1">

@@ -18,18 +18,18 @@
           </li>
           <li>
               <p><%= section.description%></p>
+          
+              <ul>
+                <% section.lessons.each do |lesson| %>
+                  <li>
+                    <b><%= lesson.title%></b>
+                    -
+                    <%= lesson.subtitle %>
+                  </li>
+                <% end %>
+              </ul>
+              <br class="clr" />
           </li>
-          <ul>
-             <% section.lessons.each do |lesson| %>
-                <li>
-              <b><%= lesson.title %></b>
-              -
-              <%= lesson.subtitle %>
-            </li>
-          <% end %>
-        </ul>
-        <br class="clr" />
-      </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
 </div>
