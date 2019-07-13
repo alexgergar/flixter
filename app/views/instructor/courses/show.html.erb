@@ -1,7 +1,7 @@
 <br />
 <div class="box-style col-10 offset-1">
     <h1 class=text-center><%= current_course.title %></h1>
-    <%= image_tag current_course.image.url.to_s, class: 'img-fluid'%>
+    <%= image_tag current_course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
     <%= link_to "Preview as a Student", course_path(current_course), class: 'btn btn-info btn-sm' %>
         <br class="clr" />
 
