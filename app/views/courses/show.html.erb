@@ -6,14 +6,20 @@
 			<br />
 		<div class="row">
 			<div class="col-sm-3 col-12 text-center border-right">
-				<button type="button" class="btn btn-success px-5 mt-1 mb-3">Get Started!</button>
-				<h4 class="cost"><%= number_to_currency @course.cost %></h4>
+        <% if current_user && current_user.enrolled_in?(@course) %>
+          <h3 class="btn btn-success px-5 mt-1 mb-3">Your are Enrolled!</h3>
+        <% else %>
+          <%= link_to 'Enroll', course_enrollments_path(@course), method: :post, class: "btn btn-success px-5 mt-1 mb-3" %>
+        <% end %>
+
+        <h4 class="cost"><%= number_to_currency @course.cost %></h4>
 			
 				<% if current_user && current_user == @course.user %>
 					<br />
-					<%= link_to "Administer", instructor_course_path(@course), class: "btn btn-warning btn-large"%>
+        <%= link_to "Administer", instructor_course_path(@course), class: "btn btn-warning btn-large"%>
 				<% end %>
-			</div>
+
+     	</div>
 			
 			<div class="col-sm-9 col-12 my-auto">
 					<%= @course.description %>

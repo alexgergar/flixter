@@ -1,7 +1,9 @@
 class Course < ApplicationRecord
    mount_uploader :image, ImageUploader
+   
    belongs_to :user
    has_many :sections
+   has_many :enrollments
    
    validates :title, presence: true
    validates :description, presence: true
@@ -16,7 +18,7 @@ class Course < ApplicationRecord
         end 
       current_number = last_toc_number + 1
       TOC_num.push(current_number)
-      current_number
+      return current_number
     end
 
     def clear_toc

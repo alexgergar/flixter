@@ -63,6 +63,12 @@ h1, h2, h3, h4, h5 {
   border-color: #8C3503;
 }
 
+.btn-success:hover, .btn-success:active, .btn-success:not(:disabled):not(.disabled):active, .btn-success:focus, .btn-success:not(:disabled):not(.disabled):active:focus,  {
+  background-color: #722B27;
+  border-color: #722B27;
+  box-shadow: none;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #007bff;
