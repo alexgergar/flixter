@@ -6,11 +6,12 @@
 			<br />
 		<div class="row">
 			<div class="col-sm-3 col-12 text-center border-right">
-				<h3><%= number_to_currency @course.cost %></h3>
+				<button type="button" class="btn btn-success px-5 mt-1 mb-3">Get Started!</button>
+				<h4 class="cost"><%= number_to_currency @course.cost %></h4>
 			
 				<% if current_user && current_user == @course.user %>
 					<br />
-					<%= link_to "Administer", instructor_course_path(@course), class: "btn btn-danger btn-large"%>
+					<%= link_to "Administer", instructor_course_path(@course), class: "btn btn-warning btn-large"%>
 				<% end %>
 			</div>
 			
@@ -19,20 +20,27 @@
 			</div>
 		</div>
 
-		<div class='col-12'>
-			<% @course.sections.each do |section| %>
-				<div class="section">
-					<%= section.title %>
-						<% section.lessons.each do |lesson| %>
-							<div class="lesson">
-								<%= link_to lesson_path(lesson) do %>
-									<b><%= lesson.title %></b>
-									-
-									<%= lesson.subtitle %>
-								<% end %>
-							</div>
-						<% end %>
-				</div>
-			<% end %>
+		
+
+		<div class='col-12 mt-5'>
+        <% @course.sections.each do |section| %>
+          <div class="section p-5">
+            <h3 class="section-title text-left mb-4"><%= @course.toc %>. <%= section.title %></h3>
+              <div class="row pl-5">
+                <% section.lessons.each do |lesson| %>
+                  <div class="col-12 col-sm-6 mb-2">
+                    <div class="lesson m-1 d-flex align-items-center justify-content-center rounded">
+                      <%= link_to lesson_path(lesson) do %>
+                        <b><%= lesson.title %></b>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <br class="clr" />
+          </div>
+        <% end %>
 		</div>
+
+    <% @course.clear_toc %>
 </div>

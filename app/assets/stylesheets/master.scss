@@ -1,6 +1,14 @@
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400|Raleway&display=swap');
+
+body {
+  font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Raleway", "Lucida Grande", Helvetica, sans-serif;
+}
 
 .box-style {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -13,12 +21,12 @@
 }
 
 .box-style h1, .box-style h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", "Lucida Grande", Helvetica, sans-serif;
 }
 
 
 .navbar {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", "Lucida Grande", Helvetica, sans-serif;
   background: #F2F2F2;
   font-size: 16px;
   letter-spacing: 1px;
@@ -36,7 +44,7 @@
   text-shadow: 2px 2px 4px #000000;
   display: flex;
   align-items: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .fa {
@@ -49,18 +57,22 @@
   border-color: #8C3503;
 }
 
+ .btn-success {   // this is for the buy button for each course
+  background-color: #8C3503;
+  color: #F2F2F2;
+  border-color: #8C3503;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
 .feature {
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-body h4 {
-  letter-spacing: 0.5px;
 }
 
 .btn:hover {
@@ -84,6 +96,48 @@ body h4 {
 .course-title a:hover { 
   text-shadow: 1px 2px 2px #c9c9c9;
 }
+
+.cost {
+  font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.section {
+  border: 1px solid;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+}
+
+.section-title-toc {
+  text-decoration: none;
+
+}
+
+.lesson {
+  background-color: #8C8B88;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 20px;
+  font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  height: 130px;
+  font-weight: 100;
+
+}
+
+.lesson:hover {
+  box-shadow: 0px 1px 3px #2a2a2a;
+  
+}
+
+.lesson a {
+  color: #F2F2F2;
+  letter-spacing: 0.75px;
+  text-decoration: none;
+}
+
+.lesson:hover a {
+  color: #D1D1D1;
+}
+
+
 
 /* Color Theme Swatches in Hex */
 .Fashion-1-hex { color: #8C8B88; } /*grey*/
