@@ -25,5 +25,13 @@ class Course < ApplicationRecord
       TOC_num.clear
     end
 
+    def free?
+      cost.zero?
+    end
 
+    def premium?
+      ! free?
+    end
+
+    
 end
