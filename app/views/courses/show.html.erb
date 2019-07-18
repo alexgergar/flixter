@@ -50,7 +50,7 @@
           <div class="section p-5">
             <h3 class="section-title text-left mb-4"><%= @course.toc %>. <%= section.title %></h3>
               <div class="row pl-5">
-                <% section.lessons.each do |lesson| %>
+                <% section.lessons.rank(:row_order).each do |lesson| %>
                   <div class="col-12 col-sm-6 mb-2">
                     <div class="lesson m-1 d-flex align-items-center justify-content-center rounded">
                       <%= link_to lesson_path(lesson) do %>
