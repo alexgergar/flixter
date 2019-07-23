@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :lessons, only: [:show]  
   namespace :instructor do
     resources :lessons, only: [:update]
+    resources :sections, only: [:update]
     resources :sections, only: [] do              # This section is so course id isn't shown so no one can hack the url to build lesson in a wrong course - no new urls connected to it
       resources :lessons, only: [:new, :create, :edit]   # Then the lesson be nested under it and get section id
     end

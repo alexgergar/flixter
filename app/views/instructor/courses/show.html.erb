@@ -1,5 +1,16 @@
 <script>
   $(function() {
+    $('.sections').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
+        });
+        alert('Updated Section Positioning!')
+      }
+    });
     $('.lessons').sortable({
       update: function ( event, ui ) {
         $.ajax({
@@ -8,6 +19,7 @@
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
         });
+        alert('Updated Lesson Positioning!')
       }
     });
   });
@@ -24,9 +36,9 @@
         <%= link_to "Add a new section", new_instructor_course_section_path(current_course), class: 'btn btn-danger btn-lg'%>
     </div>
 <br class="clr" />
-    <ul>
-      <% current_course.sections.each do |section| %>
-          <li>
+    <ul class="sections">
+      <% current_course.sections.rank(:row_order).each do |section| %>
+          <li data-update-url="<%= instructor_section_path(section) %>">
               <h4><%= section.title %></h4>
               <%= link_to 'Add a New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-dark'%>
     
@@ -39,7 +51,7 @@
                   </li>
                 <% end %>
               </ul>
-              <br class="clr" />
+             
           </li>
       <% end %>
     </ul>
