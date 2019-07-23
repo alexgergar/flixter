@@ -1,0 +1,46 @@
+<br/>
+
+<div class="style-box col-10 offset-1">
+    <h1>What I'm Learning</h1>
+    <% current_user.enrolled_courses.each do |course| %>
+        <h3 class="text-center">
+            <%= link_to course.title, course_path(course) %>
+        </h3>
+        <br />
+        <%= image_tag course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
+            <br />
+            <br />
+        <div class="row">
+            <div class="col-10">
+                <%= course.description %>
+            </div>
+            <div class="col-2">
+                <%= link_to "More Info...", course_path(course), class: "btn btn-outline-secondary"%>
+            </div>
+        </div>
+        <hr class="col-8 offset-2">
+        <br class="clr" />
+    <% end %>
+
+    <h1>What I'm Teaching</h1>
+    <br />
+    <%current_user.courses.each do |course| %>
+        <h3 class="text-center">
+            <%= link_to course.title, course_path(course) %>
+        </h3>
+        <br />
+        <%= image_tag course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
+            <br />
+            <br />
+        <div class="row">
+            <div class="col-10">
+                <%= course.description %>
+            </div>
+            <div class="col-2">
+                <%= link_to "More Info...", course_path(course), class: "btn btn-outline-secondary"%>
+            </div>
+        </div>
+        <hr class="col-8 offset-2">
+        <br class="clr" />
+    <% end %>
+</div>

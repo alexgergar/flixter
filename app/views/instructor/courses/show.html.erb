@@ -38,16 +38,38 @@
 <br class="clr" />
     <ul class="sections">
       <% current_course.sections.rank(:row_order).each do |section| %>
-          <li data-update-url="<%= instructor_section_path(section) %>">
-              <h4><%= section.title %></h4>
-              <%= link_to 'Add a New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-dark'%>
-    
+          <li data-update-url="<%= instructor_section_path(section) %>" class="section-li p-4">
+              <div class="row">
+                <div class="col-10">
+                  <div class="section-header">
+                    <span class="fa fa-ellipsis-v" aria-hidden="true"></span>
+                    <%= section.title %>
+                  </div>
+                </div>
+                <div class="col-2">
+                    <%= link_to 'Add a New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-dark'%>
+                </div>
+              </div>
+                
+                <br class="clr" />
+                <br class="clr" />
               <ul class="lessons">
                 <% section.lessons.rank(:row_order).each do |lesson| %>
-                   <li data-update-url="<%= instructor_lesson_path(lesson) %>">
-                      <b><%= lesson.title%></b>
-                      -
-                      <%= lesson.subtitle %>
+                   <li data-update-url="<%= instructor_lesson_path(lesson) %>" class="lesson-li m-3 p-5">
+                      <div class="row">
+                          <div class="col-1">
+                              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                          </div>
+                          <div class="col-11 text-center">
+                              <p>
+                                <b><%= lesson.title%></b>
+                              </p>
+                              <p>
+                                <%= lesson.subtitle %>
+                              </p>
+                          </div>
+                      </div>
+                    <br class="clr" />
                   </li>
                 <% end %>
               </ul>
