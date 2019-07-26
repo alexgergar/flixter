@@ -26,11 +26,21 @@ body {
     padding: 10px 0px;
     margin-top: 30px;
     box-shadow: 0px 2px 3px #353535;
+    font-weight: 100;
 }
 
 #footer a {
     color: #0D0D0D;
 }
+
+.social-button {
+    margin: 4px;
+}
+
+.social a:hover {
+    text-decoration: none;
+}
+
 
 /* Color Theme Swatches in Hex */
 .Fashion-1-hex { color: #8C8B88; } /*grey*/

@@ -72,10 +72,48 @@
 
     <div id="footer">
       <div class="container">
-        <b>Teachers</b>
-          <br/>
-          <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <div class="row text">
+          <div calss="col-12 col-sm-3">
+            <b>Teachers</b>
+              <br/>
+              <%= link_to 'Teach a Course', new_instructor_course_path %>
+              <br/>
+              <%= link_to 'My Dashboard', dashboard_path %>
+          </div>
+          <div calss="col-12 col-sm-3">
+              <b>About</b>
+              <br/>
+              <%= link_to 'Team', "#" %>
+              <br/>
+              <%= link_to 'Careers', "#" %>
+              <br/>
+              <%= link_to 'Privacy Policy', privacy_path %>
+              <br/>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Contact</b>
+              <br />
+              alexandra.gergar@gmail.com
+              <br />
+              Washington D.C, 20001
+          </div>
+          <div class="col-12 col-sm-3 social">
+            <b>Social</b>
+            <br />
+            <br />
+            <%= link_to "https://www.linkedin.com/in/alexandragergar/" do %>
+              <span class="fa fa-linkedin fa-2x social-button" aria-hidden="true"></span> 
+            <% end %>
+            <%= link_to "https://github.com/alexgergar/" do %>
+              <span class="fa fa-github fa-2x social-button" aria-hidden="true"></span> 
+            <% end %>
+             <%= link_to "https://twitter.com/alexandragergar" do %>
+              <span class="fa fa-twitter fa-2x social-button" aria-hidden="true"></span>
+            <% end %>
+          </div>
+        </div>
       </div>
+    </div>
 
     
   <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
