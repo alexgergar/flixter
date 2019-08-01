@@ -6,6 +6,10 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :cost %>
+        Category - check all that apply
+        <br/>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, {:item_wrapper_class => 'checkbox_container'} %>
+        <br />
         <%= f.input :image %>
         <br />
         </div>

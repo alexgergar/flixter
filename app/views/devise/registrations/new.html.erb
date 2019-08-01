@@ -6,6 +6,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs text-left">
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name, autofocus: true %><br/><br/>
+
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name, autofocus: true %><br/><br/>
     <%= f.input :email,
                 required: true,
                 autofocus: true,

@@ -1,9 +1,8 @@
 <br />
 
-<div class="box-style col-10 offset-1">
-    <h1 class="text-center">Learn something today</h1>
+<div class="col-10 offset-1">
+    <h1 class="text-center">Courses</h1>
     <hr />
-
     <% @courses.each do |course| %>
         <h2 class="course-title text-center mb-3"><%= link_to course.title, course_path(course) %></h2>
         <div class="row">
@@ -17,4 +16,5 @@
         </div>
         <br class="clr" />
     <% end %>
+    
 </div>

@@ -4,6 +4,7 @@ class Course < ApplicationRecord
    belongs_to :user
    has_many :sections
    has_many :enrollments
+   has_and_belongs_to_many :categories, dependent: :destroy
    
    validates :title, presence: true
    validates :description, presence: true

@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Lato:100,400|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400|Raleway:300,400,700&display=swap');
 
 body {
   font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -52,15 +52,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-light {
-  background-color: #8C3503;
+  background-color: #A68358;
   color: #F2F2F2;
-  border-color: #8C3503;
+  border-color: #A68358;
 }
 
  .btn-success {   // this is for the buy button for each course
-  background-color: #8C3503;
+  background-color: #A68358;
   color: #F2F2F2;
-  border-color: #8C3503;
+  border-color: #A68358;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success:not(:disabled):not(.disabled):active, .btn-success:focus, .btn-success:not(:disabled):not(.disabled):active:focus,  {
@@ -90,12 +90,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .ctolink a {
-  color: #0D0D0D;
+  color: #262626;
   text-decoration: none;
 }
 
 .course-title a {
-  color: #0D0D0D;
+  color: #262626;
   text-decoration: none;
 }
 
@@ -131,7 +131,7 @@ ul .section-header .fa {
 }
 
 .lesson {
-  background-color: #8C8B88;
+  background-color: #D9D9D9;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding: 20px;
   font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -147,13 +147,14 @@ ul .section-header .fa {
 }
 
 .lesson a {
-  color: #F2F2F2;
+  color: #404040;
   letter-spacing: 0.75px;
   text-decoration: none;
 }
 
 .lesson:hover a {
-  color: #D1D1D1;
+   color: #404040;
+
 }
 
 .lessons li {
@@ -171,12 +172,104 @@ ul {
   list-style-type: none;
 }
 
+@media (min-width: 768px) {
 
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+        margin-right: initial;
+    }
+    
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 0%;
+}
+
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
+
+.dashboard-profile {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+}
+
+.checkbox_container {
+  display: inline-block;
+  margin: 5px;
+ }
+.checkbox_container input {
+  display: inline;
+  
+ }
+.checkbox_container .collection_check_boxes{
+  display: inline;
+  margin: 5px;
+ }
 
 
 /* Color Theme Swatches in Hex */
-.Fashion-1-hex { color: #8C8B88; } /*grey*/
-.Fashion-2-hex { color: #A66329; } /*orange*/
-.Fashion-3-hex { color: #8C3503; } /*red orange*/
-.Fashion-4-hex { color: #F2F2F2; } /*white*/
-.Fashion-5-hex { color: #0D0D0D; } /*black*/
+$Espresso-Republic-Coffee-1-hex: #BF9F63;
+$Espresso-Republic-Coffee-2-hex: #A68358;
+$Espresso-Republic-Coffee-3-hex: #D9D9D9;
+$Espresso-Republic-Coffee-4-hex: #404040;
+$Espresso-Republic-Coffee-5-hex: #262626;
+

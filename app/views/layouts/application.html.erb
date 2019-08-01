@@ -13,7 +13,7 @@
   <body>
     <div id="flex-content-container">
       <nav class="navbar navbar-expand-md navbar-light bg-faded ">
-        <%= link_to 'Flixter', root_path, class: "navbar-flixter px-3"%>       
+        <%= link_to image_tag('flixter-close-nextto.png', width:'120px'), root_path, class: "navbar-flixter px-3"%>       
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,35 +72,28 @@
 
     <div id="footer">
       <div class="container">
-        <div class="row text">
-          <div calss="col-12 col-sm-3">
+        <div class="row ">
+          <div class="col-sm-2 offset-1">
             <b>Teachers</b>
               <br/>
               <%= link_to 'Teach a Course', new_instructor_course_path %>
               <br/>
               <%= link_to 'My Dashboard', dashboard_path %>
           </div>
-          <div calss="col-12 col-sm-3">
-              <b>About</b>
+          <div class="col-sm-1 offset-4 links align-self-end">
+              <%= link_to 'Team', team_path %>
               <br/>
-              <%= link_to 'Team', "#" %>
+              <%= link_to 'Careers', careers_path %>
               <br/>
-              <%= link_to 'Careers', "#" %>
-              <br/>
+          </div>
+          <div class="col-sm-2 links align-self-end">
               <%= link_to 'Privacy Policy', privacy_path %>
               <br/>
+              <%= mail_to "alexandra.gergar@gmail.com" do %>
+                Contact
+              <% end %>
           </div>
-          <div class="col-12 col-sm-3">
-            <b>Contact</b>
-              <br />
-              alexandra.gergar@gmail.com
-              <br />
-              Washington D.C, 20001
-          </div>
-          <div class="col-12 col-sm-3 social">
-            <b>Social</b>
-            <br />
-            <br />
+          <div class="col-sm-2 social align-self-end">
             <%= link_to "https://www.linkedin.com/in/alexandragergar/" do %>
               <span class="fa fa-linkedin fa-2x social-button" aria-hidden="true"></span> 
             <% end %>

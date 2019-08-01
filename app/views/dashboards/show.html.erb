@@ -1,46 +1,134 @@
+<script>
+$('#flixter-user-dashboard').on('slide.bs.carousel', function (e) {
+
+    /*
+
+    CC 2.0 License Iatek LLC 2018
+    Attribution required
+    
+    */
+
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $x('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+</script>
+
 <br/>
 
 <div class="style-box col-10 offset-1">
-    <h1>What I'm Learning</h1>
-    <% current_user.enrolled_courses.each do |course| %>
-        <h3 class="text-center">
-            <%= link_to course.title, course_path(course) %>
-        </h3>
-        <br />
-        <%= image_tag course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
-            <br />
-            <br />
-        <div class="row">
-            <div class="col-10">
-                <%= course.description %>
-            </div>
-            <div class="col-2">
-                <%= link_to "More Info...", course_path(course), class: "btn btn-outline-secondary"%>
+    <!----- Profile Card ---->
+    <div class="row">
+        <div class="col-4">
+            <div class="dashboard-profile card" >
+                <% if current_user.image? %>
+                    <%= image_tag current_user.image.url.to_s, class: 'img-fluid' %>
+                <% else %>
+                    <%= image_tag('no-profile-image.jpg', class: 'img-fluid') %>
+                <% end %>
+                <div class="card-body">
+                    <h5 class="card-title">Hi <%= current_user.first_name %> </h5>
+                    <p class="card-text">Joined: <%= current_user.created_at.strftime("%B, %Y") %></p>
+										<% if current_user.instructor_bio? %>
+											<p class="card-text">Instructor Bio</p>
+											<p><i>"<%= current_user.instructor_bio %>"</i></p>
+										<% end %>
+										<div class="row justify-content-center">
+                    	<%= link_to "Edit Your Profile", edit_user_registration_path(current_user), class: "btn btn-outline-secondary" %>
+										</div>
+								</div>
             </div>
         </div>
-        <hr class="col-8 offset-2">
-        <br class="clr" />
-    <% end %>
+            <!----- End of Profile Card ---->
+        <div class="col-8">
+						<br/>
+                <h2>At a Glance</h2>
+                <h4 class="text-center">What I'm Learning</h4>
+						
+					<!----- Learning Carousel----->	
+						<div class="row">
+							 <div class="container-fluid">
+								<div id="carousellearning" class="carousel slide" data-ride="carousel" data-interval="9000">
+										<div class="carousel-inner" role="listbox">
+											<div class="card-deck">
+												<% current_user.enrolled_courses.each do |course| %>
+													<div class="card col-md-4 p-0">
+														<div class="carousel-item active">
+																<div class="embed-responsive embed-responsive-16by9">
+																	<%= image_tag course.image.url.to_s, class: 'card-img-top embed-responsive-item' %>
+																</div>
+																<h5 class="card-title text-center p-1">
+																		<%= link_to course.title, course_path(course) %>
+																</h5>
+														</div>
+													</div>
+												<% end %>
+											</div>
+										</div>
+										<a class="carousel-control-prev" href="#flixter-user-dashboard" role="button" data-slide="prev">
+												<i class="fa fa-chevron-left fa-lg text-muted"></i>
+												<span class="sr-only">Previous</span>
+										</a>
+										<a class="carousel-control-next text-faded" href="#flixter-user-dashboard" role="button" data-slide="next">
+												<i class="fa fa-chevron-right fa-lg text-muted"></i>
+												<span class="sr-only">Next</span>
+										</a>
+								</div>
+							</div>
+						</div>
+					
+					<br class="clr" />
+					<br/>
 
-    <h1>What I'm Teaching</h1>
-    <br />
-    <%current_user.courses.each do |course| %>
-        <h3 class="text-center">
-            <%= link_to course.title, course_path(course) %>
-        </h3>
-        <br />
-        <%= image_tag course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
-            <br />
-            <br />
-        <div class="row">
-            <div class="col-10">
-                <%= course.description %>
-            </div>
-            <div class="col-2">
-                <%= link_to "More Info...", course_path(course), class: "btn btn-outline-secondary"%>
-            </div>
-        </div>
-        <hr class="col-8 offset-2">
-        <br class="clr" />
-    <% end %>
+
+						<!----- Teaching Carousel----->	
+
+					<h4 class="text-center">What I'm Teaching</h4>						
+						<div class="row">
+							 <div class="container-fluid">
+								<div id="carouselteaching" class="carousel slide" data-ride="carousel" data-interval="9000">
+										<div class="carousel-inner" role="listbox">
+											<div class="card-deck">
+												<%current_user.courses.each do |course| %>
+													<div class="card col-md-4 p-0">
+														<div class="carousel-item active">
+																<div class="embed-responsive embed-responsive-16by9">
+																	<%= image_tag course.image.url.to_s, class: 'card-img-top embed-responsive-item' %>
+																</div>
+																<h5 class="card-title text-center p-1">
+																		<%= link_to course.title, course_path(course) %>
+																</h5>
+														</div>
+													</div>
+												<% end %>
+											</div>
+										</div>
+										<a class="carousel-control-prev" href="#flixter-user-dashboard" role="button" data-slide="prev">
+												<i class="fa fa-chevron-left fa-lg text-muted"></i>
+												<span class="sr-only">Previous</span>
+										</a>
+										<a class="carousel-control-next text-faded" href="#flixter-user-dashboard" role="button" data-slide="next">
+												<i class="fa fa-chevron-right fa-lg text-muted"></i>
+												<span class="sr-only">Next</span>
+										</a>
+								</div>
+							</div>
+						</div>
+			</div>
+   </div> 
 </div>

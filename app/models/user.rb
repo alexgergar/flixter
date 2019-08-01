@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, ImageUploader
   has_many :courses
   has_many :enrollments
   has_many :enrolled_courses, through: :enrollments, source: :course
