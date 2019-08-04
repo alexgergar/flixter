@@ -1,20 +1,252 @@
+<script>
+$(document).ready(function(){
+  $("#photo-button").click(function(){
+   $("#photography-course").toggle();
+		});
+	$("#fp-button").click(function(){
+   $("#film-course").toggle();
+		});
+	$("#pp-button").click(function(){
+		$("#pp-course").toggle();
+			});
+	$("#gd-button").click(function(){
+		$("#gd-course").toggle();
+			});
+	$("#ux-button").click(function(){
+		$("#ux-course").toggle();
+			});
+	$("#threed-button").click(function(){
+		$("#threed-course").toggle();
+			});
+	$("#vr-button").click(function(){
+		$("#vr-course").toggle();
+			});
+	$("#all-button").click(function(){
+		$("#all-course").toggle();
+			});
+});
+</script>
+
+
 <br />
 
 <div class="col-10 offset-1">
     <h1 class="text-center">Courses</h1>
     <hr />
-    <% @courses.each do |course| %>
-        <h2 class="course-title text-center mb-3"><%= link_to course.title, course_path(course) %></h2>
-        <div class="row">
-            <%= image_tag course.image.url.to_s, class: 'img-fluid col-sm-10 offset-sm-1 col-12 mb-2'%>
-            <div class="col-sm-10 col-12 ">
-                <%= course.description %>
-            </div>
-            <div class="col-sm-2 col-12 my-auto text-center ">
-                <%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
-            </div>
-        </div>
-        <br class="clr" />
-    <% end %>
     
+    <h3 class="text-center">Offering Courses in:</h3>
+		<h5 class="text-center">Click on the category to see more.</h5>
+    <div class="row justify-content-center">
+				<button type="button" id="photo-button" class="btn btn-link">Photo</button>
+				<button type="button" id="fp-button" class="btn btn-link">Film Production</button>
+				<button type="button" id="pp-button" class="btn btn-link">Post Production</button>
+				<button type="button" id="gd-button" class="btn btn-link">Graphic Design</button>
+				<button type="button" id="ux-button" class="btn btn-link">UX</button>
+				<button type="button" id="threed-button" class="btn btn-link">3D Animation</button>
+				<button type="button" id="vr-button" class="btn btn-link">VR</button>
+				<button type="button" id="all-button" class="btn btn-link">All Courses</button>
+    </div>
+
+				<!----------Photography courses ------------>
+		<div id="photography-course">
+			<h2 class="text center">Photography</h2><br/>
+			<div class="row">
+				<% @courses.each do |course| %>
+					<% if course.photography %>
+						<div class="col-sm-4">
+							<div class="embed-responsive embed-responsive-16by9">
+								<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+							</div>
+								<div class="row">
+									<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+									<div class="text-left p-4">
+											<%= course.description %>
+									</div>
+									<div class="col-sm-6 mx-auto text-center">
+											<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+									</div>
+								</div>
+								<br class="clr" />
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+
+
+				<!----------Film Production courses ------------>
+	<div id="film-course">
+		<h2 class="text center">Film Production</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>		
+				<% if course.film_production %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+				<!----------Post Production courses ------------>
+	<div id="pp-course">
+		<h2 class="text center">Post Production</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>
+				<% if course.post_production %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+					<!----------Graphic Design courses ------------>
+	<div id="gd-course">
+		<h2 class="text center">Graphic Design</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>
+				<% if course.graphic_design %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+				<!----------UX courses ------------>
+	<div id="ux-course">
+		<h2 class="text center">UX</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>
+				<% if course.ux %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+				<!----------3D courses ------------>
+	<div id="threed-course">
+		<h2 class="text center">3D Animation</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>
+				<% if course.threed_animation %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+				<!----------VR courses ------------>
+	<div id="vr-course">
+		<h2 class="text center">VR</h2><br/>
+		<div class="row">
+			<% @courses.each do |course| %>
+				<% if course.vr %>
+					<div class="col-sm-4">
+						<div class="embed-responsive embed-responsive-16by9">
+							<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+						</div>
+							<div class="row">
+								<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+								<div class="text-left p-4">
+										<%= course.description %>
+								</div>
+								<div class="col-sm-6 mx-auto text-center">
+										<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+								</div>
+							</div>
+							<br class="clr" />
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+<hr />
+
+    <!------------------- all courses ----------->
+<div id="all-course">
+	<h2 class="text-center">All Courses</h2><br/>
+	<div class="row">
+		<% @courses.each do |course| %>
+			<div class="col-sm-4">
+				<div class="embed-responsive embed-responsive-16by9">
+					<%= link_to image_tag(course.image.url.to_s, class: 'embed-responsive-item'), course_path(course) %>
+				</div>
+					<div class="row">
+						<h3 class="course-title text-center m-3"><%= link_to course.title, course_path(course) %></h3>
+						<div class="text-left p-4">
+								<%= course.description %>
+						</div>
+						<div class="col-sm-6 mx-auto text-center">
+								<%= link_to "Learn More", course_path(course), class: "btn btn-outline-secondary btn-large"%>
+						</div>
+					</div>
+					<br class="clr" />
+			</div>
+		<% end %>
+	</div>
 </div>

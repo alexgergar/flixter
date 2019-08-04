@@ -1,15 +1,48 @@
+<script>
+$('#flixter-index').on('slide.bs.carousel', function (e) {
+
+    /*
+
+    CC 2.0 License Iatek LLC 2018
+    Attribution required
+    
+    */
+
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $x('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+</script>
+
+
+
 <div class="hero"> 
   <div class="hero-box col-6 offset-1 ">
 		<h1>Skills to move you forward</h1>
 		<h4>Anytime. Anyplace.</h4>
-		<form class="d-flex form-inline">
+		<%# <form class="d-flex form-inline">
 			<div class="input-group col-12 pl-0 mt-2">
       			<div class="input-group-prepend">
         			<span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
       			</div>
       			<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
     		</div>
-    	</form>
+    	</form> %>
 	</div>
 </div>
 
@@ -32,7 +65,26 @@
 <br class="clr" />
 
 <div class="row text-center">
-	<div class="ctolink col">
-		<h1><%= link_to "Browse the Courses", courses_path %></h1>
+	<div class="pt-1 col-6 offset-3 border">
+		<h1 class="ctolink"><%= link_to "Browse the Courses", courses_path %></h1>
+	</div>
+</div>
+<br/>
+<div class="homepage-call row">
+	<div class="col text-center">
+		<h2 class="pt-4">Visual Design Courses</h2>
+		<h3 class="pb-4">For the Skills You Need Now</h3>
+	</div>
+</div>
+<br/>
+<br/>
+<div class="homepage-contactteam row text-center align-items-center">
+	<div class="col-sm-6">
+			<h2><%= link_to 'Teach a Course', new_instructor_course_path %></h2>
+	</div>
+	<div class="col-sm-3 offset-1">
+			<%= mail_to "alexandra.gergar@gmail.com" do %>
+                <h3>Contact Us For Your Team</h3>
+      <% end %>
 	</div>
 </div>

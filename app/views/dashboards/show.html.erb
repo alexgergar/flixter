@@ -67,12 +67,12 @@ $('#flixter-user-dashboard').on('slide.bs.carousel', function (e) {
 										<div class="carousel-inner" role="listbox">
 											<div class="card-deck">
 												<% current_user.enrolled_courses.each do |course| %>
-													<div class="card col-md-4 p-0">
+													<div class="card card-dashboard col-md-4 p-0">
 														<div class="carousel-item active">
 																<div class="embed-responsive embed-responsive-16by9">
 																	<%= image_tag course.image.url.to_s, class: 'card-img-top embed-responsive-item' %>
 																</div>
-																<h5 class="card-title text-center p-1">
+																<h5 class="card-title text-center p-2">
 																		<%= link_to course.title, course_path(course) %>
 																</h5>
 														</div>

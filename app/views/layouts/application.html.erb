@@ -13,7 +13,7 @@
   <body>
     <div id="flex-content-container">
       <nav class="navbar navbar-expand-md navbar-light bg-faded ">
-        <%= link_to image_tag('flixter-close-nextto.png', width:'120px'), root_path, class: "navbar-flixter px-3"%>       
+        <%= link_to image_tag('flixter-close-nextto-grey.png', width:'120px'), root_path, class: "navbar-flixter px-3"%>       
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,10 @@
               <%= link_to "See All Courses", courses_path, class: "nav-link"%>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <%# <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search">
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          </form> %>
           <ul class="navbar-nav my-2 my-lg-0">
             <% if user_signed_in? %>
             <li class="nav-item ml-2">
@@ -73,27 +73,23 @@
     <div id="footer">
       <div class="container">
         <div class="row ">
-          <div class="col-sm-2 offset-1">
+          <div class="col-sm-2">
             <b>Teachers</b>
               <br/>
               <%= link_to 'Teach a Course', new_instructor_course_path %>
               <br/>
               <%= link_to 'My Dashboard', dashboard_path %>
           </div>
-          <div class="col-sm-1 offset-4 links align-self-end">
-              <%= link_to 'Team', team_path %>
-              <br/>
-              <%= link_to 'Careers', careers_path %>
-              <br/>
-          </div>
-          <div class="col-sm-2 links align-self-end">
-              <%= link_to 'Privacy Policy', privacy_path %>
+          <div class="col-sm-2 offset-sm-6 links align-self-end">
+              <%= link_to 'About', about_path %>
               <br/>
               <%= mail_to "alexandra.gergar@gmail.com" do %>
                 Contact
-              <% end %>
+              <% end %>  
+                <br/>
+              <%= link_to 'Privacy Policy', privacy_path %>
           </div>
-          <div class="col-sm-2 social align-self-end">
+          <div class="col-sm-2 social text-right align-self-end">
             <%= link_to "https://www.linkedin.com/in/alexandragergar/" do %>
               <span class="fa fa-linkedin fa-2x social-button" aria-hidden="true"></span> 
             <% end %>

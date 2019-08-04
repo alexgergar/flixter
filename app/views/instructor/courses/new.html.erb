@@ -6,9 +6,23 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :cost %>
+        <% if current_user.instructor_bio.empty? %>
+            <%= f.input :instructor_bio, label: "Instructor Biography", hint: "Please provide a brief description of who you are and your professional background. This will give students a little better of who you are!"%>
+        <% end %>
         Category - check all that apply
         <br/>
-        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, {:item_wrapper_class => 'checkbox_container'} %>
+        <br/>
+        <div class="row pl-4">
+            <div class="col-3"><%= f.input :photography, label: "Photograpy", boolean_style: :inline %></div>
+            <div class="col-3"><%= f.input :film_production, label: "Film Production", boolean_style: :inline %></div>
+            <div class="col-3"><%= f.input :post_production, label: "Post-Production", boolean_style: :inline %></div>
+        </div>
+        <div class="row pl-4">
+            <div class="col-3"><%= f.input :graphic_design, label: "Graphic Design", boolean_style: :inline %></div>
+            <div class="col-3"><%= f.input :ux, label: "UX", boolean_style: :inline %></div>
+            <div class="col-3"><%= f.input :threed_animation, label: "3D Animation", boolean_style: :inline %></div>
+            <div class="col-3"><%= f.input :vr, label: "VR", boolean_style: :inline %></div>
+        </div>
         <br />
         <%= f.input :image %>
         <br />

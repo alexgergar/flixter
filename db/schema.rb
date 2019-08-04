@@ -10,24 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_161247) do
+ActiveRecord::Schema.define(version: 2019_08_02_194040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.integer "category_id"
-    t.integer "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id", "course_id"], name: "index_categories_on_category_id_and_course_id"
-  end
-
-  create_table "categories_courses", id: false, force: :cascade do |t|
-    t.bigint "course_id", null: false
-    t.bigint "category_id", null: false
-  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -37,6 +23,14 @@ ActiveRecord::Schema.define(version: 2019_07_31_161247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.boolean "photography"
+    t.boolean "film_production"
+    t.boolean "post_production"
+    t.boolean "graphic_design"
+    t.boolean "ux"
+    t.boolean "threed_animation"
+    t.boolean "vr"
+    t.float "rating"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
