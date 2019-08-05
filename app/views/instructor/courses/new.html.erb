@@ -6,9 +6,6 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :cost %>
-        <% if current_user.instructor_bio.empty? %>
-            <%= f.input :instructor_bio, label: "Instructor Biography", hint: "Please provide a brief description of who you are and your professional background. This will give students a little better of who you are!"%>
-        <% end %>
         Category - check all that apply
         <br/>
         <br/>

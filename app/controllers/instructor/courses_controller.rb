@@ -35,6 +35,6 @@ class Instructor::CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(:course).permit(:title, :description, :cost, :image, category_ids: [])
+        params.require(:course).permit(:title, :description, :cost, :image, :photography, :film_production, :post_production, :graphic_design, :ux, :threed_animation, :vr)
     end
 end
