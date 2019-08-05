@@ -29,6 +29,12 @@
               <h3><%= link_to "Sign in to Enroll", new_user_session_path, class: "btn btn-success px-5 mt-1 mb-3" %></h3>
             <% end %>
 
+            <% if current_user && current_user == @course.user %>
+              <br />
+              <br />
+              <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
+            <% end %>
+
               <p class="card-text mt-5"><%= @course.description %></p>
             </div>
           </div>
