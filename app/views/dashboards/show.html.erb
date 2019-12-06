@@ -1,13 +1,6 @@
 <script>
 $('#flixter-user-dashboard').on('slide.bs.carousel', function (e) {
 
-    /*
-
-    CC 2.0 License Iatek LLC 2018
-    Attribution required
-    
-    */
-
     var $e = $(e.relatedTarget);
     var idx = $e.index();
     var itemsPerSlide = 3;
@@ -139,7 +132,7 @@ $('#flixter-user-dashboard-learning').on('slide.bs.carousel', function (e) {
 																<div class="embed-responsive embed-responsive-16by9">
 																	<%= image_tag course.image.url.to_s, class: 'card-img-top embed-responsive-item' %>
 																</div>
-																<h5 class="card-title text-center p-1">
+																<h5 class="card-title text-center p-1 card-title-dashboard">
 																		<%= link_to course.title, course_path(course) %>
 																</h5>
 														</div>

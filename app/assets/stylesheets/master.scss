@@ -343,6 +343,14 @@ ul {
   color: #D9D9D9;
 }
 
+.card-title-dashboard {
+  -webkit-line-clamp: 2;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
 /* Color Theme Swatches in Hex */
 $Espresso-Republic-Coffee-1-hex: #BF9F63;
 $Espresso-Republic-Coffee-2-hex: #A68358;
