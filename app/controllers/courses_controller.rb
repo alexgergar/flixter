@@ -5,7 +5,6 @@ class CoursesController < ApplicationController
 
     def show
         @course = Course.find(params[:id])
-        puts "#{current_user.email} ^^^^^^^^^^^^^^^^^^^"
     end
 
 end

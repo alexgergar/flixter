@@ -21,7 +21,7 @@
         $.ajax({
           type: 'PUT',
           url: ui.item.data('update-url'),
-          dataType: 'json',
+          dataType: 'text',
           data: { lesson: { row_order_position: ui.item.index() } }
         });
         alert('Updated Lesson Positioning!')
